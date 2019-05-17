@@ -1,0 +1,16 @@
+<div class="container mt-3">
+    <div class="row">
+
+        <div class="col-auto ">
+            {{#each cards}}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <a href="/game/{{this.title}}" class="btn btn-success">Pass Test</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
