@@ -18,7 +18,7 @@ async function run() {
                 correctAnswer: "1812"}]
     
         })
-        await card1.save()
+        // await card1.save()
 db.close();
 }
 

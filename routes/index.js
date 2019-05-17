@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Card = require('../seed/card.js');
+const User = require('../seed/users.js');
+
 
 
 /* GET home page. */
@@ -25,6 +27,22 @@ router.get('/game/:id', async function (req, res, next) {
   
   res.render('game', { question });
 });
+
+router.post('/game/:id', async function(req, res, next) {
+  // let question = await Card.showQuestion(putTitle);
+  const newUser = new User ({
+    name: "Katrin",
+    qa: [{
+        gameTitle: req.params.id,
+        userQuestion: req.body.questName,
+        userAnswer: req.body.inputAnswer
+    }] 
+  })
+  await  newUser.save();
+  res.render('game')
+});
+
+
 /////////
 // router.post('/form2', async function(req, res, next) {
 //   let quest1=req.body.questName;

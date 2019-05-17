@@ -19,6 +19,12 @@ cardSchema.statics.showQuestion =  async function(putTitle) {
     return all;
   }
 
+  cardSchema.statics.getTitle =  async function(putTitle) {
+   let all =  (await this.find({title:putTitle})).map(item=>item.title);
+      console.log(all)
+      return all;
+    }
+
  module.exports = mongoose.model('Card', cardSchema);
  
  
